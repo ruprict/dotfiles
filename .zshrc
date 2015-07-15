@@ -44,11 +44,15 @@ plugins=(git rails 3 ruby osx tmux)
 
 source $ZSH/oh-my-zsh.sh
 
+export GOPATH=~/projects/go
+
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:$GOPATH/bin
 
+export EDITOR="vim"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 export JRUBY_OPTS="--1.9 -J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC -J-XX:MaxPermSize=1024m -J-Xmx3072m -J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -J-noverify"
 
@@ -59,4 +63,9 @@ set -o vi
 
 alias gd='git diff --ignore-space-at-eol -b -w'
 
+PERL_MB_OP=T"--install_base \"/Users/ggoodrich/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/ggoodrich/perl5"; export PERL_MM_OPT;
 
+source ~/.dotenv.sh
+boot2docker up
+eval "$(boot2docker shellinit)"
