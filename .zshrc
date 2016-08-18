@@ -50,7 +50,7 @@ export GOPATH=~/projects/go
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:$GOPATH/bin
 
-export EDITOR="vim"
+export EDITOR="nvim"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
@@ -67,5 +67,7 @@ PERL_MB_OP=T"--install_base \"/Users/ggoodrich/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/ggoodrich/perl5"; export PERL_MM_OPT;
 
 source ~/.dotenv.sh
-boot2docker up
-eval "$(boot2docker shellinit)"
+
+. ~/.nvm/nvm.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
