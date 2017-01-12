@@ -37,7 +37,7 @@ function! s:neosnippet_complete()
   if pumvisible()
     return "\<c-n>"
   else
-    if neosnippet#expandable_or_jumpable() 
+    if neosnippet#expandable_or_jumpable()
       return "\<Plug>(neosnippet_expand_or_jump)"
     endif
     return "\<tab>"
@@ -222,8 +222,8 @@ nmap <C-s> :w<CR>
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 
 
-"Markdown to HTML  
-nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>  
+"Markdown to HTML
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 
 "Point to right ctags
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
@@ -421,3 +421,6 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
+
+" Strip Whitespace on save
+autocmd BufWritePre * StripWhitespace

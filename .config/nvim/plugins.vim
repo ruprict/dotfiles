@@ -4,6 +4,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'mattn/gist-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-ruby/vim-ruby'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'fatih/vim-go'
@@ -21,6 +22,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-unimpaired'
+Plug 'lambdatoast/elm.vim'
+Plug 'godoctor/godoctor.vim'
 
 " Add plugins to &runtimepath
 call plug#end()

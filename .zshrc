@@ -71,3 +71,8 @@ source ~/.dotenv.sh
 . ~/.nvm/nvm.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# added by travis gem
+[ -f /Users/ggoodrich/.travis/travis.sh ] && source /Users/ggoodrich/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
