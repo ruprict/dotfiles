@@ -25,6 +25,7 @@ set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 
 set number      "add line numbers
+set rnu         "add relative line numbers
 set showbreak=...
 set wrap linebreak nolist
 
@@ -90,7 +91,7 @@ set autoindent
 set tabstop=8
 
 "folding settings
-set foldmethod=indent   "fold based on indent
+set foldmethod=syntax   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
@@ -235,7 +236,7 @@ let g:loaded_matchparen = 1
 
 "RVM shell fix
 "set shell=/bin/sh
-set shell=bash\ -i
+set shell=/bin/zsh\ -l
 
 if has("multi_byte")
   if &termencoding == ""
@@ -423,4 +424,10 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
 " Strip Whitespace on save
-autocmd BufWritePre * StripWhitespace
+autocmd BufEnter * EnableStripWhitespaceOnSave
+
+let g:RubyRunner_key = '<Leader>r'
+let g:RubyRunner_keep_focus_key = '<Leader>R'
+let g:RubyRunner_open_below = 1
+
+let g:elm_format_autosave = 1
