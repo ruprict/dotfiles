@@ -76,3 +76,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [ -f /Users/ggoodrich/.travis/travis.sh ] && source /Users/ggoodrich/.travis/travis.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export PATH="$HOME/.yarn/bin:$PATH"
