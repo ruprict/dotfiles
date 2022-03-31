@@ -47,8 +47,21 @@ Plug 'dense-analysis/ale'
 Plug 'mileszs/ack.vim'
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim'
+Plug 'honza/vim-snippets'
+Plug 'axelf4/vim-strip-trailing-whitespace'
+Plug 'vim-airline/vim-airline'
+Plug 'ojroques/vim-scrollstatus'
+Plug 'jpalardy/vim-slime'
 
 call plug#end()
+
+" vim-scrollstatus
+let g:airline_section_x = '%{ScrollStatus()} '
+let g:airline_section_y = airline#section#create_right(['filetype'])
+let g:airline_section_z = airline#section#create([
+            \ '%#__accent_bold#%3l%#__restore__#/%L', ' ',
+            \ '%#__accent_bold#%3v%#__restore__#/%3{virtcol("$") - 1}',
+            \ ])
 
 silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :call FindInNERDTree()<CR>
@@ -119,3 +132,11 @@ autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
 autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
 autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
 autocmd ColorScheme * highlight SignColumn guibg=#adadad
+
+let g:coc_global_extensions = ['coc-solargraph']
+
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
+
+" Put swap files in ~/.vim/swap
+set directory=$HOME/.vim/swp//

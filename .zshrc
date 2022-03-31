@@ -112,6 +112,6 @@ fi
 
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="/usr/local/opt/openjdk/bin:$PATH:${GOROOT}/bin"
+export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$PATH:${GOROOT}/bin"
 
 
